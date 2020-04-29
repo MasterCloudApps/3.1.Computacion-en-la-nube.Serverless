@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "lambda1-rest"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1rj0nvy37qq9g"
+s3_prefix = "lambda1-rest"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+
