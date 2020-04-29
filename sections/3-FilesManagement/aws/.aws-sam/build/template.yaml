@@ -3,9 +3,9 @@ Resources:
   filesHandlingFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Handler: index.filesHandler
-      CodeUri: s3://franrobles8-filehandling-bucket/f8259117bd4bcf3ebf2aebd93036d5de
+      CodeUri: filesHandlingFunction
       Events:
         lambdaGetFile:
           Type: Api
@@ -41,3 +41,8 @@ Resources:
           Action: s3:*Object
           Resource:
           - arn:aws:s3:::franrobles8-filehandling-bucket/*
+Outputs:
+  PublicApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/

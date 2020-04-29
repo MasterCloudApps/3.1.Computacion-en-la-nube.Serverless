@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "lambda4-database"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1rj0nvy37qq9g"
+s3_prefix = "lambda4-database"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+

@@ -64,7 +64,7 @@ After doing this, a window should pop up from our default browser, but if it doe
     git clone https://github.com/codeurjc-students/2019-ServerlessVsExpress.git
     ```
 
-3. From the console, navigate to the folder **"sections/REST/aws-lambda"**.
+3. From the console, navigate to the folder **"sections/1-REST/aws-lambda"**.
 
 4. Build and deploy
     ```

@@ -3,12 +3,12 @@ const { pdfBucketName } = require('./config/config');
 const PDFDocument = require('pdfkit');
 
 // Set the region
-AWS.config.update({region: 'eu-west-3'});
+AWS.config.update({ region: 'eu-west-3' });
 
 // Configure S3 object to use the API functionality of 2006-03-01 version
-const S3 = new AWS.S3({apiVersion: '2006-03-01'});
+const S3 = new AWS.S3({ apiVersion: '2006-03-01' });
 
-const consumer = async (data) => {
+const consumer = async(data) => {
     data = JSON.parse(data);
     return await generatePdf(data);
 };
@@ -24,9 +24,9 @@ const generatePdf = (data) => {
     pdfContent.end();
 
     const params = {
-        Key : `pdfs/pdf-${Date.now()}.pdf`,
-        Body : pdfContent,
-        Bucket : pdfBucketName
+        Key: `pdfs/pdf-${Date.now()}.pdf`,
+        Body: pdfContent,
+        Bucket: pdfBucketName
     };
 
     console.log(`Uploading pdf with name: ${params.Key}`);

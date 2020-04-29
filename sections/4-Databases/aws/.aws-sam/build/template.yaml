@@ -3,9 +3,9 @@ Resources:
   usersFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Handler: index.usersHandler
-      CodeUri: s3://franrobles8-database-test/7d6b6a369222b2145d59148d31f33956
+      CodeUri: usersFunction
       Events:
         lambdaGetAllUsers:
           Type: Api
@@ -58,3 +58,8 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
+Outputs:
+  PublicApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/

@@ -3,9 +3,9 @@ Resources:
   pdfApiCreationFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs10.x
+      Runtime: nodejs12.x
       Handler: index.pdfSenderHandler
-      CodeUri: s3://franrobles8-pdf-bucket/7877d8a00eecd1e021a3a108b5687364
+      CodeUri: pdfApiCreationFunction
       Events:
         lambdaWriteFile:
           Type: Api
@@ -22,7 +22,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.queueProcessingHandler
-      Runtime: nodejs10.x
+      Runtime: nodejs12.x
+      CodeUri: SQSQueueFunction
       Policies:
       - SQSPollerPolicy:
           QueueName:
@@ -30,9 +31,13 @@ Resources:
             - PdfSqsQueue
             - QueueName
       - S3CrudPolicy:
-          BucketName: franrobles8-pdf-bucket
-      CodeUri: s3://franrobles8-pdf-bucket/7877d8a00eecd1e021a3a108b5687364
+          BucketName: xxxxxx-pdf-bucket
   PdfSqsQueue:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: pdfQueue
+Outputs:
+  PublicApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/
