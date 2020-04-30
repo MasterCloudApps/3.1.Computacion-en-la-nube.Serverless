@@ -35,7 +35,7 @@ Resources:
   UsersManagementLambdaAuthentication:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://users-management-bucket/013a6c453e2f8c8aca88d0def601551e
+      CodeUri: s3://users-management-bucket2/013a6c453e2f8c8aca88d0def601551e
       Handler: index.authHandler
       Runtime: nodejs12.x
       Environment:
@@ -92,7 +92,7 @@ Resources:
   UsersManagementLambdaUser:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://users-management-bucket/013a6c453e2f8c8aca88d0def601551e
+      CodeUri: s3://users-management-bucket2/013a6c453e2f8c8aca88d0def601551e
       Handler: user.userHandler
       Runtime: nodejs12.x
       Environment:
@@ -144,7 +144,7 @@ Resources:
   UsersManagementLambdaAuthenticationOptions:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://users-management-bucket/013a6c453e2f8c8aca88d0def601551e
+      CodeUri: s3://users-management-bucket2/013a6c453e2f8c8aca88d0def601551e
       Handler: index.optionsHandler
       Runtime: nodejs12.x
       Environment:
@@ -201,7 +201,7 @@ Resources:
   UsersManagementLambdaUserOptions:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://users-management-bucket/013a6c453e2f8c8aca88d0def601551e
+      CodeUri: s3://users-management-bucket2/013a6c453e2f8c8aca88d0def601551e
       Handler: user.optionsHandler
       Runtime: nodejs12.x
       Environment:

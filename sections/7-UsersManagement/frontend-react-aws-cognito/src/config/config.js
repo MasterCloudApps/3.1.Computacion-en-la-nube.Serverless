@@ -1,1 +1,1 @@
-export const BASE_URL_API_BACKEND = 'https://t9ykuaxz97.execute-api.eu-west-2.amazonaws.com/dev';
+export const BASE_URL_API_BACKEND = ' https://rxh8cz4k58.execute-api.us-east-1.amazonaws.com/dev';
