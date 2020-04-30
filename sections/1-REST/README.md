@@ -69,7 +69,7 @@ After doing this, a window should pop up from our default browser, but if it doe
 4. Build and deploy
     ```
     sam build
-sam deploy --guided
+    sam deploy --guided
     ```
 
 ### Use
