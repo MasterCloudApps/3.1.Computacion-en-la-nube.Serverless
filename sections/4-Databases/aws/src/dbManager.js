@@ -2,7 +2,8 @@ const uuid = require('uuid');
 const AWS = require('aws-sdk');
 
 AWS.config.update({
-    endpoint: "https://dynamodb.eu-west-3.amazonaws.com"
+    endpoint: "https://dynamodb.us-east-1.amazonaws.com",
+    region: "us-east-1"
 });
 
 const docClient = new AWS.DynamoDB.DocumentClient();
