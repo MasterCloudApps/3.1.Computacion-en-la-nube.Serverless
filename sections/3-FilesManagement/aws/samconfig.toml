@@ -2,8 +2,8 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "lambda3-files"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1rj0nvy37qq9g"
-s3_prefix = "lambda3-files"
+stack_name = "sam-app3"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-6f83n1n2y4wq"
+s3_prefix = "sam-app3"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"

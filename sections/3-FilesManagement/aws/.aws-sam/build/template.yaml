@@ -35,14 +35,14 @@ Resources:
           Action:
           - s3:ListBucket
           Resource:
-          - arn:aws:s3:::franrobles8-filehandling-bucket
+          - arn:aws:s3:::spa-bucket-mca2021
         - Sid: AllObjectActions
           Effect: Allow
           Action: s3:*Object
           Resource:
-          - arn:aws:s3:::franrobles8-filehandling-bucket/*
+          - arn:aws:s3:::spa-bucket-mca2021/*
 Outputs:
   PublicApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
     Value:
-      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/

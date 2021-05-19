@@ -4,7 +4,7 @@ const AWS = require('aws-sdk');
 const S3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 // Set your bucket name, where you will handle the files
-const bucket = 'franrobles8-filehandling-bucket';
+const bucket = 'spa-bucket-mca2021';
 
 
 exports.filesHandler = (event, context, callback) => {
@@ -78,7 +78,7 @@ const getObject = (fileName, callback) => {
             console.log(dataObject);
             // As the data returned from getObject contains a lot of meta-data and
             // the body is buffered, we must parse it to whatever we need, in our case, a string
-            sendResponse(200, {content: dataObject.Body.toString('utf-8')}, callback);
+            sendResponse(200, {fileContent: dataObject.Body.toString('utf-8')}, callback);
         }
     });
 };
